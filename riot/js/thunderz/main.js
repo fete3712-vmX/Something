@@ -15,6 +15,49 @@ font-family:sans-serif;
 `;
 document.body.appendChild(win);
 
+// Drag support (PC + Mobile)
+let dragging = false;
+let ox = 0, oy = 0;
+
+win.style.left = "50%";
+win.style.top = "50%";
+win.style.transform = "translate(-50%,-50%)";
+
+function start(x, y) {
+  dragging = true;
+    const r = win.getBoundingClientRect();
+    win.style.left = r.left + "px";
+                win.style.top = r.top + "px";
+                    win.style.transform = "none";
+                        ox = x - r.left;
+                            oy = y - r.top;
+                            }
+
+                            function move(x, y) {
+                                if (!dragging) return;
+                                    win.style.left = (x - ox) + "px";
+                                        win.style.top = (y - oy) + "px";
+                                        }
+
+                                        function end() {
+                                            dragging = false;
+                                            }
+
+                                            win.addEventListener("mousedown", e => start(e.clientX, e.clientY));
+                                            document.addEventListener("mousemove", e => move(e.clientX, e.clientY));
+                                            document.addEventListener("mouseup", end);
+
+                                            win.addEventListener("touchstart", e => {
+                                                const t = e.touches[0];
+                                                    start(t.clientX, t.clientY);
+                                                    }, { passive: true });
+
+                                                    document.addEventListener("touchmove", e => {
+                                                        const t = e.touches[0];
+                                                            move(t.clientX, t.clientY);
+                                                            }, { passive: true });
+
+                                                            document.addEventListener("touchend", end);
 // Title
 const img = document.createElement("img");
 img.src =
