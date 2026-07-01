@@ -9,5 +9,6 @@ return {
         frame.BackgroundColor3 = color
         Instance.new("UICorner",frame)
         Instance.new("UIDragDetector",frame)
+        Instance.new("UIListLayout",frame)
     end
 }
