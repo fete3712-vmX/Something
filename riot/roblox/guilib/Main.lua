@@ -9,3 +9,7 @@ return {
     CreateButton = function(text: string, callback: function, frame: Instance, size: UDim2) Modules.Button.createButton(text,callback,frame,size) end
     CreateImageButton = function(image: number, callback: function, parent: Instance) Modules.ImageButton.createImageButton(image,callback,parent) end
 }
+
+--[[
+local lib = loadstring(game:GetService("HttpService"):GetAsync('https://raw.githubusercontent.com/fete3712-vmX/Something/refs/heads/main/riot/roblox/guilib/Main.lua'))
+]]
