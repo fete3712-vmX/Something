@@ -10,5 +10,6 @@ return {
         Instance.new("UICorner",frame)
         Instance.new("UIDragDetector",frame)
         Instance.new("UIListLayout",frame)
+        return gui
     end
 }
