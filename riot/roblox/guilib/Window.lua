@@ -8,6 +8,6 @@ return {
         frame.Position = position
         frame.BackgroundColor3 = color
         Instance.new("UICorner",frame)
-        
+        Instance.new("UIDragDetector",frame)
     end
 }
