@@ -12,3 +12,5 @@ async function man(file,name) {
 
 }
 
+
+man()
