@@ -1,16 +1,16 @@
-import { fetchUri } from "./fetches";
+import { fetchUri } from "./fetches.js";
 
-const items = fetchUri();
-async function man(file,name) {
-   const div = document.createElement("div");
-   div.style.backgroundColor = "rgb(0,0,0)";
-   div.style.width = "160px";
-   div.style.height = "160px"
-   document.appendChild(div);
+async function main() {
+    const items = await fetchUri();
 
-   const filelink = document.createElement("button");
+    const div = document.createElement("div");
+    div.style.backgroundColor = "black";
+    div.style.width = "160px";
+    div.style.height = "160px";
 
+    document.body.appendChild(div);
+
+    console.log(items);
 }
 
-
-man()
+main();
