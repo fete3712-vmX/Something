@@ -1,7 +1,7 @@
-const json = "";
-const response = await fetch(json);
-const data;
-
-if (response.ok) {
-    data = await response.json();
+const url = "https://raw.githubusercontent.com/fete3712-vmX/Something/refs/heads/Website/files.json";
+async function fetchUri() {
+    const response = await fetch(url);
+    if (!response.ok) {alert("Couldn't fetch files.")};
+    
+    return response.json()
 }
